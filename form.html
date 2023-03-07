@@ -37,7 +37,7 @@
             </div>
             <div class="inbox">
                 <h2>Basic Details</h2>
-                <form class="form1" name="submit-to-google-sheet">
+                <form class="form1" id="tryform" name="submit-to-google-sheet">
                     <div class="ce">
                         <input class="firstn" name="First Name" type="text" placeholder="First Name" required>
                         <br>
@@ -48,6 +48,8 @@
                         <br><input class="firstn" name="Email id" type="email" placeholder="Email id">
                     </div>
                     <br> <textarea class="cen" name="Address" rows="4" cols="50" placeholder="House no./ Street/ City/ Landmark/ State"></textarea>
+                    <br>
+                    <input class="pincode" name="pincode" type="text" placeholder="Pincode" required>
                     <h2>Booking Details</h2> 
                     <input name="Wash" id="Wash" type="checkbox" value="Wash">
                     <label class="and" for="Wash"> Wash</label>
@@ -131,15 +133,25 @@
         </div>
     </footer>
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycby-c4Fqy2c-kxdV1E2ECxWCOc14ZgPUXUpk2Ztibr1E81r-9DiO4xCIG-obftRX59Fr/exec'
+        const scriptURL1 = 'https://script.google.com/macros/s/AKfycbyphIuEogNGuCbJ6A4Nlzh0O1iPhjeeSx0QZpFJkd_ZFJ1-Dw8xgYXszzAZdiV2q38z/exec'
+        const scriptURL2 = 'https://script.google.com/macros/s/AKfycby-c4Fqy2c-kxdV1E2ECxWCOc14ZgPUXUpk2Ztibr1E81r-9DiO4xCIG-obftRX59Fr/exec'
         const form = document.forms['submit-to-google-sheet']
 
-        form.addEventListener('submit', e => {
+         form.addEventListener('submit', e => {
+            var x = document.getElementById("tryform");
+            var text = x.elements[5].value
+            console.log(text)
             e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            if( text == 110011){
+            fetch(scriptURL1, { method: 'POST', body: new FormData(form) })
                 .then(response => console.log('Success!', response))
                 .catch(error => console.error('Error!', error.message))
-        })
+        }
+        else{
+            fetch(scriptURL2, { method: 'POST', body: new FormData(form) })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+        }})
     </script>
 </body>
 
