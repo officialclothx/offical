@@ -105,3 +105,46 @@ footer{
 .form{
     background-color: #5B00F5;
 }
+/*Business.html page*/
+
+.welcome{
+    background-color: #FF5C1F;
+    padding: 10px;
+}
+.shop1top{
+    height: 150px;
+    background-color: beige;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+.shopframe{
+    background-color: black;
+    width: 80vw;
+    height: 500px;
+    position: relative;
+    z-index: -1;
+}
+.bframe{
+position: absolute;
+width: 85vw;
+height: 700px;
+top: -150px;
+left: -45px;
+
+}
+.shop1right{
+    width: 10vw;
+    height: 500px;
+    background-color: beige;
+}
+.shopcenter{
+    display: flex;
+}
+.framecover{
+    width: 78.6vw;
+    height: 492px;
+    position: absolute;
+    border: 5px solid black;
+    border-radius: 10px;
+}
