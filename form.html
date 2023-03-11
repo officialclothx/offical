@@ -132,9 +132,12 @@
             Merchant App<br>
         </div>
     </footer>
-    <script>
-        const scriptURL1 = 'https://script.google.com/macros/s/AKfycbyphIuEogNGuCbJ6A4Nlzh0O1iPhjeeSx0QZpFJkd_ZFJ1-Dw8xgYXszzAZdiV2q38z/exec'
-        const scriptURL2 = 'https://script.google.com/macros/s/AKfycby-c4Fqy2c-kxdV1E2ECxWCOc14ZgPUXUpk2Ztibr1E81r-9DiO4xCIG-obftRX59Fr/exec'
+     <script>
+        const scriptURL1 = 'https://script.google.com/macros/s/AKfycby-c4Fqy2c-kxdV1E2ECxWCOc14ZgPUXUpk2Ztibr1E81r-9DiO4xCIG-obftRX59Fr/exec'
+        const scriptURL2 = 'https://script.google.com/macros/s/AKfycbwXnMNDkVPwQ9mpHXQj_myAlIl9zgNyTl5X8NX2vvcJfyCXkigB4SChSre3sNrtoEk/exec'
+        const scriptURL3 = 'https://script.google.com/macros/s/AKfycbwisIQIPkDko8FJGgt8CV0IY3uUfLM3qC7bsN2pp9eH_ZYPvkUt_A8teILrYFzhmBGBig/exec'
+        const scriptURL4 = 'https://script.google.com/macros/s/AKfycbyCsoN64ecQipF_NrYEkur8RHTADq3zbWyII1oVn8t5p5JgUGNxrmuCOi5HKYSBZS8r/exec'
+        const scriptURL5 = 'https://script.google.com/macros/s/AKfycbyphIuEogNGuCbJ6A4Nlzh0O1iPhjeeSx0QZpFJkd_ZFJ1-Dw8xgYXszzAZdiV2q38z/exec'
         const form = document.forms['submit-to-google-sheet']
 
          form.addEventListener('submit', e => {
@@ -147,8 +150,23 @@
                 .then(response => console.log('Success!', response))
                 .catch(error => console.error('Error!', error.message))
         }
+            else if( text == 110012){
+                fetch(scriptURL2, { method: 'POST', body: new FormData(form) })
+                    .then(response => console.log('Success!', response))
+                    .catch(error => console.error('Error!', error.message))
+            }
+            else if( text == 110013){
+                fetch(scriptURL3, { method: 'POST', body: new FormData(form) })
+                    .then(response => console.log('Success!', response))
+                    .catch(error => console.error('Error!', error.message))
+            }
+            else if( text == 110014){
+                fetch(scriptURL4, { method: 'POST', body: new FormData(form) })
+                    .then(response => console.log('Success!', response))
+                    .catch(error => console.error('Error!', error.message))
+            }
         else{
-            fetch(scriptURL2, { method: 'POST', body: new FormData(form) })
+            fetch(scriptURL5, { method: 'POST', body: new FormData(form) })
                 .then(response => console.log('Success!', response))
                 .catch(error => console.error('Error!', error.message))
         }})
